@@ -4,7 +4,7 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|user_name|string|null: false, foreign_key: true, add_index :users,  :user_name|
+|name|string|null: false, add_index :users,  :user_name|
 ### Association
 - has_many :groups_users
 - has_many :groups, through:  :groups_users
