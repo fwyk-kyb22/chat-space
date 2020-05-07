@@ -9,12 +9,14 @@
   .side_bar {
     width: 300px;
     background-color: #253141;
+    
+    color: #ffffff;
     &__outer_name {
       background-color: #253141;
       height: 100px;
       display: flex;
       align-items: center;
-      &__inner_name{
+      &__inner_name {
         height: 20px;
         width: 260px;
         margin-right: 20px;
@@ -23,12 +25,11 @@
         justify-content: space-between;
         &__user_name {
           line-height: 20px;
-          color: #ffffff;
           font-size: 16px;
+          font-weight: bold;
         }
         &__icons{
           width: 60px;
-          
           &--icon {
             padding-left: 5px;
             color: #ffffff;
@@ -41,6 +42,17 @@
     &__group_list {
       background-color: #2f3e51;
       height: calc(100vh - 100px);
+      &__group_name {
+        height: 65px;
+        padding: 20px 20px 40px 20px;
+        h1 {
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+        p {
+          font-size: 11px;
+        }
+      }
     }
   }
   .main_chat {
