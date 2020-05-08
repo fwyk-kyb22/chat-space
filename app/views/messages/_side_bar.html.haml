@@ -1,13 +1,13 @@
 .side_bar
-  .side_bar__outer_name
-    .side_bar__outer_name__inner_name
-      .side_bar__outer_name__inner_name__user_name
+  .side_bar__header
+    .side_bar__header__box
+      .side_bar__header__box__user_name
         masa
-      .side_bar__outer_name__inner_name__icons
+      .side_bar__header__box__icons
         = link_to "#" do
-          = icon('fas', 'cog', class: 'side_bar__outer_name__inner_name__icons--icon')
+          = icon('fas', 'cog', class: 'side_bar__header__box__icons--icon')
         = link_to "#" do
-          = icon('far', 'edit', class: 'side_bar__outer_name__inner_name__icons--icon')
+          = icon('far', 'edit', class: 'side_bar__header__box__icons--icon')
   .side_bar__group_list
     .side_bar__group_list__group_name
       %h1
