@@ -58,10 +58,39 @@
   .main_chat {
     width: calc(100vw - 300px);
     background-color: #ffffff;
-    &__group_name {
+    &__header{
       background-color: #ffffff;
       height: 100px;
       border-bottom: 1px solid #eeeeee;
+      display: flex;
+      justify-content: space-between;
+      &__group_name {
+        padding-left: 40px;
+        h1 {
+          color: #333333;
+          font-size: 20px;
+          padding: 35px 0 15px 0;
+        }
+        &__member_name {
+          color: #999999;
+          font-size: 12px;
+        }  
+      }
+      &__edit {
+        margin: 28px 40px 28px 0;
+        &--btn {
+          width: 72px;
+          height: 40px;
+          color: #38aef0;
+          font-size: 16px;
+          padding: 0 20px;
+          text-align: center;
+          border: 1px solid #38aef0;
+          line-height: 40px;
+          display: block;
+          text-decoration: none;
+        }
+      }
     }
     &__message_list {
       background-color: #fafafa;

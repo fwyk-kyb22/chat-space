@@ -1,5 +1,13 @@
 .main_chat
-  .main_chat__group_name
+  .main_chat__header
+    .main_chat__header__group_name
+      %h1
+        test
+      .main_chat__header__group_name__member_name
+        Member : masa
+    .main_chat__header__edit
+      = link_to("#" ,class: "main_chat__header__edit--btn") do    
+        Edit
   .main_chat__message_list
   .main_chat__message_from
   
