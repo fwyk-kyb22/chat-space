@@ -1,15 +1,19 @@
 * {
   box-sizing: border-box;
 }
-
-.wrapper {
-  display: flex;
+$white: #ffffff;
+$light_blue: #38aef0;
+@mixin space-between{
+	display: flex;
   justify-content: space-between;
+}
+.wrapper {
+  @include space-between;
   height: 100vh;
   .side_bar {
     width: 300px;
     background-color: #253141;
-    color: #ffffff;
+    color: $white;
     &__header {
       background-color: #253141;
       height: 100px;
@@ -20,8 +24,7 @@
         width: 260px;
         margin-right: 20px;
         margin-left: 20px;
-        display: flex;
-        justify-content: space-between;
+        @include space-between;
         &__user_name {
           line-height: 20px;
           font-size: 16px;
@@ -31,7 +34,7 @@
           width: 60px;
           &--icon {
             padding-left: 5px;
-            color: #ffffff;
+            color: $white;
             float: right;
             text-decoration: none;
           }
@@ -55,13 +58,12 @@
   }
   .main_chat {
     width: calc(100vw - 300px);
-    background-color: #ffffff;
+    background-color: $white;
     &__header{
-      background-color: #ffffff;
+      background-color: $white;
       height: 100px;
       border-bottom: 1px solid #eeeeee;
-      display: flex;
-      justify-content: space-between;
+      @include space-between;
       &__group_name {
         padding-left: 40px;
         h1 {
@@ -79,11 +81,11 @@
         &--btn {
           width: 72px;
           height: 40px;
-          color: #38aef0;
+          color: $light_blue;
           font-size: 16px;
           padding: 0 20px;
           text-align: center;
-          border: 1px solid #38aef0;
+          border: 1px solid $light_blue;
           line-height: 40px;
           display: block;
           text-decoration: none;
@@ -91,7 +93,7 @@
       }
     }
     &__message_list {
-      background-color: #fafafa;
+      background-color: $white;
       height: calc(100vh - 100px - 90px);
       &__container {
         padding: 35px 0 46px 40px;
@@ -119,44 +121,44 @@
     &__message_form {
       background-color: #d2d2d2;
       height: 90px;
-      display: flex;
-      justify-content: space-between;
+      @include space-between;
       &__box {
         height: 50px;
         width: calc(100vw - 100px);
-        background-color: white;
+        background-color: $white;
         margin: 20px 15px 20px 40px;
-        &__message{
-          display: flex;
-          justify-content: space-between;
+        &__inner_box{
+          @include space-between;
           width: 100%;
+          position: relative;
           &--text_field{
             line-height: 50px;
             border: none;
             width: 100%;
             padding-left: 10px;
-          }
-        }
-        &__img{
-          &--icon {
-            line-height: 50px;
-            padding-right: 10px;
-          }
-          &--btn {
-            display: none;
-            padding-right: 10px;
             
           }
-        }
+          &__img{
+            position: absolute;
+            right: 10px;
+            &--icon {
+              line-height: 50px;
+              padding-right: 10px;
+            }
+            &--btn {
+              display: none;
+              padding-right: 10px;
+            }
+          }
+        }  
       }
       &__send {
-        
         &--btn {
           width: 100px;
           margin: 20px 40px 20px 0;
           height: 50px;
-          background-color: #38aef0;
-          color: white;
+          background-color:$light_blue;
+          color: $white;
           text-align: center;
         }
       }
