@@ -1,12 +1,6 @@
 * {
   box-sizing: border-box;
 }
-$white: #ffffff;
-$light_blue: #38aef0;
-@mixin space-between{
-	display: flex;
-  justify-content: space-between;
-}
 .wrapper {
   @include space-between;
   height: 100vh;
