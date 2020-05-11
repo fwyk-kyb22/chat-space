@@ -1,0 +1,50 @@
+.main_chat
+  .main_chat__header
+    .main_chat__header__group_name
+      %h1
+        test
+      .main_chat__header__group_name__member_name
+        Member : masa
+    .main_chat__header__edit
+      = link_to("#" ,class: "main_chat__header__edit--btn") do    
+        Edit
+  .main_chat__message_list
+    .main_chat__message_list__container
+      .main_chat__message_list__container__name
+        %h1
+          masa
+        %p  
+          2020/05/08(Fri) 11:26:27
+      .main_chat__message_list__container__message
+        %p
+          おはよう
+    .main_chat__message_list__container
+      .main_chat__message_list__container__name
+        %h1
+          masa
+        %p  
+          2020/05/08(Fri) 11:26:27
+      .main_chat__message_list__container__message
+        %p
+          おはよう
+    .main_chat__message_list__container
+      .main_chat__message_list__container__name
+        %h1
+          masa
+        %p  
+          2020/05/08(Fri) 11:26:27
+      .main_chat__message_list__container__message
+        %p
+          おはよう     
+      
+  .main_chat__message_form
+    .main_chat__message_form__box
+      = form_for "#" do |form|
+        .main_chat__message_form__box__inner_box
+          = form.text_field :message, placeholder: "type a message",class: "main_chat__message_form__box__inner_box--text_field"
+          %label{class: "main_chat__message_form__box__inner_box__img"}
+            = icon('fas', 'image' , class: "main_chat__message_form__box__inner_box__img--icon")
+            = form.file_field :file, class: "main_chat__message_form__box__inner_box__img--btn"
+    .main_chat__message_form__send
+    = form_for "#" do |form| 
+      = form.submit "Send", class: "main_chat__message_form__send--btn"
