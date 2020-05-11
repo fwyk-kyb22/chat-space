@@ -116,10 +116,50 @@
         }
       }
     }
-    &__message_from {
+    &__message_form {
       background-color: #d2d2d2;
       height: 90px;
-      
+      display: flex;
+      justify-content: space-between;
+      &__box {
+        height: 50px;
+        width: calc(100vw - 100px);
+        background-color: white;
+        margin: 20px 15px 20px 40px;
+        &__message{
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          &--text_field{
+            line-height: 50px;
+            border: none;
+            width: 100%;
+            padding-left: 10px;
+          }
+        }
+        &__img{
+          &--icon {
+            line-height: 50px;
+            padding-right: 10px;
+          }
+          &--btn {
+            display: none;
+            padding-right: 10px;
+            
+          }
+        }
+      }
+      &__send {
+        
+        &--btn {
+          width: 100px;
+          margin: 20px 40px 20px 0;
+          height: 50px;
+          background-color: #38aef0;
+          color: white;
+          text-align: center;
+        }
+      }
     }
   }
 }

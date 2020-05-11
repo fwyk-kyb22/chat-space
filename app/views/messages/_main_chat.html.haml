@@ -37,5 +37,14 @@
         %p
           おはよう     
       
-  .main_chat__message_from
-  
+  .main_chat__message_form
+    .main_chat__message_form__box
+      = form_for "#" do |form|
+        %label{class: "main_chat__message_form__box__message"}
+          = form.text_field :message, placeholder: "type a message",class: "main_chat__message_form__box__message--text_field"
+          %label{class: "main_chat__message_form__box__img"}
+            = icon('fas', 'image' , class: "main_chat__message_form__box__img--icon")
+            = form.file_field :file, class: "main_chat__message_form__box__img--btn"
+    .main_chat__message_form__send
+    = form_for "#" do |form| 
+      = form.submit "Send", class: "main_chat__message_form__send--btn"
