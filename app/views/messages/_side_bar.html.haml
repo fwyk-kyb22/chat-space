@@ -2,9 +2,9 @@
   .side_bar__header
     .side_bar__header__box
       .side_bar__header__box__user_name
-        masa
+        = current_user.name
       .side_bar__header__box__icons
-        = link_to "#" do
+        = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: 'side_bar__header__box__icons--icon')
         = link_to "#" do
           = icon('far', 'edit', class: 'side_bar__header__box__icons--icon')
