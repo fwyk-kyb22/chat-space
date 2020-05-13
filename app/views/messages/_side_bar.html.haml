@@ -6,24 +6,14 @@
       .side_bar__header__box__icons
         = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: 'side_bar__header__box__icons--icon')
-        = link_to "#" do
+        = link_to  new_group_path do
           = icon('far', 'edit', class: 'side_bar__header__box__icons--icon')
   .side_bar__group_list
     .side_bar__group_list__group_name
-      %h1
-        techcamp
-      %p  
-        まだメッセージがありません
-    .side_bar__group_list__group_name
-      %h1
-        techcamp
-      %p  
-        まだメッセージがありません
-    .side_bar__group_list__group_name
-      %h1
-        techcamp
-      %p  
-        まだメッセージがありません
-
-
-
+      - current_user.groups.each do |group|
+        .group
+          = link_to '#' ,class: "group__link" do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
