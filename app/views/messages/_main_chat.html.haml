@@ -11,8 +11,7 @@
       = link_to(edit_group_path(@group.id) ,class: "main_chat__header__edit--btn") do    
         Edit
   .main_chat__message_list
-    .main_chat__message_list__container
-      = render @messages
+    = render @messages
     
       
   .main_chat__message_form
