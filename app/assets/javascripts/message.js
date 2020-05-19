@@ -53,6 +53,8 @@ $(function(){
       var html =  buildHTML(data);
       $('.main_chat__message_list').append(html);
       $('form')[0].reset();
+      $('.main_chat__message_list').animate({ scrollTop: $('.main_chat__message_list')[0].scrollHeight});
+      $('.main_chat__message_form__box--btn').prop('disabled', false);
     })
   })
 })
