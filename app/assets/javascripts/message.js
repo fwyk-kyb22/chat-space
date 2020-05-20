@@ -1,4 +1,5 @@
 $(function(){
+  
   function buildHTML(message) {
     var name =   `<div class="main_chat__message_list__container__name">
                     ${message.user_name}
@@ -13,7 +14,7 @@ $(function(){
                 </div>` 
     
     if (message.content && message.image) {
-      var html = `<div class="main_chat__message_list__container">
+      var html = `<div class="main_chat__message_list__container" data-message-id=${message.id}>
                     ${name}
                     ${created_at}
                     <div class="main_chat__message_list__container__message">
@@ -21,14 +22,14 @@ $(function(){
                     ${image}
                   </div>`
     } else if (message.content) {
-      var html =  `<div class="main_chat__message_list__container">
+      var html =  `<div class="main_chat__message_list__container" data-message-id=${message.id}>
                     ${name}
                     ${created_at}
                     <div class="main_chat__message_list__container__message">
                     ${content}
                   </div>`
     } else if (message.image) {
-      var html = `<div class="main_chat__message_list__container">
+      var html = `<div class="main_chat__message_list__container" data-message-id=${message.id}>
                     ${name}
                     ${created_at}
                     <div class="main_chat__message_list__container__message">
@@ -60,5 +61,26 @@ $(function(){
       alert("メッセージ送信に失敗しました");
       $('.main_chat__message_form__box--btn').prop('disabled', false);
   });
+  
   })
+  var reloadMessages = function() {
+    var last_message_id = $('.main_chat__message_list__container:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.main_chat__message_list__container').append(insertHTML);
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  setInterval(reloadMessages, 7000);
 })
