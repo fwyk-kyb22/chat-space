@@ -60,7 +60,7 @@ $(function(){
     .fail(function() {
       alert("メッセージ送信に失敗しました");
       $('.main_chat__message_form__box--btn').prop('disabled', false);
-  });
+    });
   
   })
   var reloadMessages = function() {
@@ -77,13 +77,15 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.main_chat__message_list__container').append(insertHTML);
-        $('.main_chat__message_list__container').animate({ scrollTop: $('.main_chat__message_list__container')[0].scrollHeight});
+        $('.main_chat__message_list').append(insertHTML);
+        $('.main_chat__message_list').animate({ scrollTop: $('.main_chat__message_list')[0].scrollHeight});
       }
     })
     .fail(function() {
       alert('error');
     });
   };
-  setInterval(reloadMessages, 7000);
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 })
